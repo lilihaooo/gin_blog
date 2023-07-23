@@ -1,0 +1,168 @@
+
+2023/07/23 14:54:00 /home/lh/go/src/blog-gin/core/gorm.go:84 Error 1146 (42S02): Table 'gin_blog.user' doesn't exist
+[3.023ms] [rows:-] SELECT * FROM user WHERE age > 25
+
+2023/07/23 14:54:00 /home/lh/go/src/blog-gin/core/gorm.go:85 Error 1146 (42S02): Table 'gin_blog.user' doesn't exist
+[0.643ms] [rows:-] SELECT * FROM user WHERE age > 25
+
+2023/07/23 14:54:00 /home/lh/go/src/blog-gin/core/gorm.go:86 Error 1146 (42S02): Table 'gin_blog.user' doesn't exist
+[0.637ms] [rows:-] SELECT * FROM user WHERE age > 25
+
+2023/07/23 14:59:02 /home/lh/go/src/blog-gin/core/gorm.go:96 Error 1146 (42S02): Table 'gin_blog.user' doesn't exist
+[2.925ms] [rows:-] SELECT * FROM user WHERE age > 25
+
+2023/07/23 14:59:02 /home/lh/go/src/blog-gin/core/gorm.go:97 Error 1146 (42S02): Table 'gin_blog.user' doesn't exist
+[0.667ms] [rows:-] SELECT * FROM user WHERE age > 25
+
+2023/07/23 14:59:02 /home/lh/go/src/blog-gin/core/gorm.go:98 Error 1146 (42S02): Table 'gin_blog.user' doesn't exist
+[0.660ms] [rows:-] SELECT * FROM user WHERE age > 25
+
+2023/07/23 14:59:12 /home/lh/go/src/blog-gin/core/gorm.go:96 Error 1146 (42S02): Table 'gin_blog.user' doesn't exist
+[2.719ms] [rows:-] SELECT * FROM user WHERE age > 25
+
+2023/07/23 14:59:12 /home/lh/go/src/blog-gin/core/gorm.go:97 Error 1146 (42S02): Table 'gin_blog.user' doesn't exist
+[0.771ms] [rows:-] SELECT * FROM user WHERE age > 25
+
+2023/07/23 14:59:12 /home/lh/go/src/blog-gin/core/gorm.go:98 Error 1146 (42S02): Table 'gin_blog.user' doesn't exist
+[0.678ms] [rows:-] SELECT * FROM user WHERE age > 25
+
+2023/07/23 15:07:44 /home/lh/go/src/blog-gin/core/gorm.go:84 Error 1146 (42S02): Table 'gin_blog.user' doesn't exist
+[3.034ms] [rows:-] SELECT * FROM user WHERE age > 25
+
+2023/07/23 15:07:44 /home/lh/go/src/blog-gin/core/gorm.go:85 Error 1146 (42S02): Table 'gin_blog.user' doesn't exist
+[0.723ms] [rows:-] SELECT * FROM user WHERE age > 25
+
+2023/07/23 15:07:44 /home/lh/go/src/blog-gin/core/gorm.go:86 Error 1146 (42S02): Table 'gin_blog.user' doesn't exist
+[0.683ms] [rows:-] SELECT * FROM user WHERE age > 25
+
+2023/07/23 15:08:08 /home/lh/go/src/blog-gin/core/gorm.go:84 Error 1146 (42S02): Table 'gin_blog.user' doesn't exist
+[3.190ms] [rows:-] SELECT * FROM user WHERE age > 25
+
+2023/07/23 15:08:08 /home/lh/go/src/blog-gin/core/gorm.go:85 Error 1146 (42S02): Table 'gin_blog.user' doesn't exist
+[0.819ms] [rows:-] SELECT * FROM user WHERE age > 25
+
+2023/07/23 15:08:08 /home/lh/go/src/blog-gin/core/gorm.go:86 Error 1146 (42S02): Table 'gin_blog.user' doesn't exist
+[0.717ms] [rows:-] SELECT * FROM user WHERE age > 25
+
+2023/07/23 15:08:15 /home/lh/go/src/blog-gin/core/gorm.go:84 Error 1146 (42S02): Table 'gin_blog.user' doesn't exist
+[3.092ms] [rows:-] SELECT * FROM user WHERE age > 25
+
+2023/07/23 15:08:15 /home/lh/go/src/blog-gin/core/gorm.go:85 Error 1146 (42S02): Table 'gin_blog.user' doesn't exist
+[0.663ms] [rows:-] SELECT * FROM user WHERE age > 25
+
+2023/07/23 15:08:15 /home/lh/go/src/blog-gin/core/gorm.go:86 Error 1146 (42S02): Table 'gin_blog.user' doesn't exist
+[0.708ms] [rows:-] SELECT * FROM user WHERE age > 25
+
+2023/07/23 15:10:42 /home/lh/go/src/blog-gin/core/gorm.go:58
+[error] failed to initialize database, got error dial tcp 127.0.0.1:3306: connect: connection refused
+
+2023/07/23 15:10:45 /home/lh/go/src/blog-gin/core/gorm.go:58
+[error] failed to initialize database, got error dial tcp 127.0.0.1:3306: connect: connection refused
+
+2023/07/23 15:10:58 /home/lh/go/src/blog-gin/core/gorm.go:58
+[error] failed to initialize database, got error dial tcp 127.0.0.1:3306: connect: connection refused
+
+2023/07/23 15:12:41 /home/lh/go/src/blog-gin/core/gorm.go:58
+[error] failed to initialize database, got error dial tcp 127.0.0.1:3306: connect: connection refused
+
+2023/07/23 15:16:03 /home/lh/go/src/blog-gin/core/gorm.go:58
+[error] failed to initialize database, got error dial tcp 127.0.0.1:3306: connect: connection refused
+
+2023/07/23 15:18:21 /home/lh/go/src/blog-gin/core/gorm.go:58
+[error] failed to initialize database, got error dial tcp 127.0.0.1:3306: connect: connection refused
+
+2023/07/23 15:18:49 /home/lh/go/src/blog-gin/core/gorm.go:58
+[error] failed to initialize database, got error dial tcp 127.0.0.1:3306: connect: connection refused
+
+2023/07/23 15:19:39 /home/lh/go/src/blog-gin/core/gorm.go:58
+[error] failed to initialize database, got error dial tcp 127.0.0.1:3306: connect: connection refused
+
+2023/07/23 15:20:58 /home/lh/go/src/blog-gin/core/gorm.go:58
+[error] failed to initialize database, got error dial tcp 127.0.0.1:3306: connect: connection refused
+
+2023/07/23 15:20:59 /home/lh/go/src/blog-gin/core/gorm.go:58
+[error] failed to initialize database, got error dial tcp 127.0.0.1:3306: connect: connection refused
+
+2023/07/23 15:21:00 /home/lh/go/src/blog-gin/core/gorm.go:58
+[error] failed to initialize database, got error dial tcp 127.0.0.1:3306: connect: connection refused
+
+2023/07/23 15:21:01 /home/lh/go/src/blog-gin/core/gorm.go:58
+[error] failed to initialize database, got error dial tcp 127.0.0.1:3306: connect: connection refused
+
+2023/07/23 15:21:02 /home/lh/go/src/blog-gin/core/gorm.go:58
+[error] failed to initialize database, got error dial tcp 127.0.0.1:3306: connect: connection refused
+
+2023/07/23 15:21:11 /home/lh/go/src/blog-gin/core/gorm.go:58
+[error] failed to initialize database, got error dial tcp 127.0.0.1:3306: connect: connection refused
+
+2023/07/23 15:21:15 /home/lh/go/src/blog-gin/core/gorm.go:58
+[error] failed to initialize database, got error dial tcp 127.0.0.1:3306: connect: connection refused
+
+2023/07/23 15:21:53 /home/lh/go/src/blog-gin/core/gorm.go:58
+[error] failed to initialize database, got error dial tcp 127.0.0.1:3306: connect: connection refused
+
+2023/07/23 15:22:01 /home/lh/go/src/blog-gin/core/gorm.go:58
+[error] failed to initialize database, got error dial tcp 127.0.0.1:3306: connect: connection refused
+
+2023/07/23 15:22:03 /home/lh/go/src/blog-gin/core/gorm.go:58
+[error] failed to initialize database, got error dial tcp 127.0.0.1:3306: connect: connection refused
+
+2023/07/23 15:22:07 /home/lh/go/src/blog-gin/core/gorm.go:58
+[error] failed to initialize database, got error dial tcp 127.0.0.1:3306: connect: connection refused
+
+2023/07/23 15:22:08 /home/lh/go/src/blog-gin/core/gorm.go:58
+[error] failed to initialize database, got error dial tcp 127.0.0.1:3306: connect: connection refused
+
+2023/07/23 15:22:09 /home/lh/go/src/blog-gin/core/gorm.go:58
+[error] failed to initialize database, got error dial tcp 127.0.0.1:3306: connect: connection refused
+
+2023/07/23 15:22:23 /home/lh/go/src/blog-gin/core/gorm.go:58
+[error] failed to initialize database, got error dial tcp 127.0.0.1:3306: connect: connection refused
+
+2023/07/23 15:22:55 /home/lh/go/src/blog-gin/core/gorm.go:58
+[error] failed to initialize database, got error dial tcp 127.0.0.1:3306: connect: connection refused
+
+2023/07/23 15:24:11 /home/lh/go/src/blog-gin/core/gorm.go:58
+[error] failed to initialize database, got error dial tcp 127.0.0.1:3306: connect: connection refused
+
+2023/07/23 15:24:13 /home/lh/go/src/blog-gin/core/gorm.go:58
+[error] failed to initialize database, got error dial tcp 127.0.0.1:3306: connect: connection refused
+
+2023/07/23 15:24:35 /home/lh/go/src/blog-gin/core/gorm.go:58
+[error] failed to initialize database, got error dial tcp 127.0.0.1:3306: connect: connection refused
+
+2023/07/23 15:24:58 /home/lh/go/src/blog-gin/core/gorm.go:58
+[error] failed to initialize database, got error dial tcp 127.0.0.1:3306: connect: connection refused
+
+2023/07/23 15:25:48 /home/lh/go/src/blog-gin/core/gorm.go:58
+[error] failed to initialize database, got error dial tcp 127.0.0.1:3306: connect: connection refused
+
+2023/07/23 15:26:00 /home/lh/go/src/blog-gin/core/gorm.go:58
+[error] failed to initialize database, got error dial tcp 127.0.0.1:3306: connect: connection refused
+
+2023/07/23 15:26:07 /home/lh/go/src/blog-gin/core/gorm.go:58
+[error] failed to initialize database, got error dial tcp 127.0.0.1:3306: connect: connection refused
+
+2023/07/23 15:26:22 /home/lh/go/src/blog-gin/core/gorm.go:58
+[error] failed to initialize database, got error dial tcp 127.0.0.1:3306: connect: connection refused
+
+2023/07/23 15:29:57 /home/lh/go/src/blog-gin/core/gorm.go:58
+[error] failed to initialize database, got error dial tcp 127.0.0.1:3306: connect: connection refused
+
+2023/07/23 15:31:11 /home/lh/go/src/blog-gin/core/gorm.go:58
+[error] failed to initialize database, got error dial tcp 127.0.0.1:3306: connect: connection refused
+
+2023/07/23 15:31:20 /home/lh/go/src/blog-gin/core/gorm.go:58
+[error] failed to initialize database, got error dial tcp 127.0.0.1:3306: connect: connection refused
+
+2023/07/23 15:31:50 /home/lh/go/src/blog-gin/core/gorm.go:58
+[error] failed to initialize database, got error dial tcp 127.0.0.1:3306: connect: connection refused
+
+2023/07/23 15:32:05 /home/lh/go/src/blog-gin/core/gorm.go:58
+[error] failed to initialize database, got error dial tcp 127.0.0.1:3306: connect: connection refused
+
+2023/07/23 15:32:27 /home/lh/go/src/blog-gin/core/gorm.go:58
+[error] failed to initialize database, got error dial tcp 127.0.0.1:3306: connect: connection refused
+
+2023/07/23 18:09:43 /home/lh/go/src/blog-gin/core/gorm.go:57
+[error] failed to initialize database, got error dial tcp 127.0.0.1:3306: connect: connection refused

@@ -9,55 +9,58 @@ server:
 mysql:
   host: 127.0.0.1
   port: 3306
-  user: root
+  username: root
   password: a111111
   db: gin_blog
-  log_level: dev
+
+  # 可选[info, worn, error]
+  # info: 每天sql日志都会在控制台打印处理
+  # worn, error 会记录在日志文件中  适用于生产环境, 对日志的不同要求  worn: 会记录慢查询及error级别的错误, error 记录表不存在等错误
+  log_level: error
+
   # table_prefix:
 
 
 logger:
   level: info
-  prefix: '[gin]'
-  director: log
-  show-line: true            # 显示行号
-  log-in-console: true       # 显示路径
+#  show-line: true            # 显示行号
+#  log-in-console: true       # 显示路径
 
 
-app:
-  page-size: 10
-  jwt-secret: go-mall
-  prefix-url: 'http://127.0.0.1:8000'
-  runtime-root-path: 'runtime/'
-  image-save-path: 'upload/images/'
-  # MB
-  image-max-size: 5242880
-  image-allow-exts: ['.jpg','.jpeg','.png']
-  export-save-path: 'export/'
-  qrcode-save-path: 'qrcode/'
-  font-save-path: 'fonts/'
-  log-save-path: 'logs/'
-  Log-save-name: 'log'
-  Log-file-ext: 'log'
-  time-format: 20060102
-
-
-
-redis:
-  host: '127.0.0.1:6379'
-  password: 'a111111'
-  max_idle: 30
-  max_active: 30
-  idle_timeout: 200
+#app:
+#  page-size: 10
+#  jwt-secret: go-mall
+#  prefix-url: 'http://127.0.0.1:8000'
+#  runtime-root-path: 'runtime/'
+#  image-save-path: 'upload/images/'
+#  # MB
+#  image-max-size: 5242880
+#  image-allow-exts: ['.jpg','.jpeg','.png']
+#  export-save-path: 'export/'
+#  qrcode-save-path: 'qrcode/'
+#  font-save-path: 'fonts/'
+#  log-save-path: 'logs/'
+#  Log-save-name: 'log'
+#  Log-file-ext: 'log'
+#  time-format: 20060102
 
 
 
-wechat:
-  app_id:
-  app_secret:
-  token: yshop-gin
-  encoding_aes_key:
-
-express:
-  eBusinessId: 1607734
-  appKey: 81f43a2e-f504-45c4-9b54-2637d59f8190
+#redis:
+#  host: '127.0.0.1:6379'
+#  password: 'a111111'
+#  max_idle: 30
+#  max_active: 30
+#  idle_timeout: 200
+#
+#
+#
+#wechat:
+#  app_id:
+#  app_secret:
+#  token: yshop-gin
+#  encoding_aes_key:
+#
+#express:
+#  eBusinessId: 1607734
+#  appKey: 81f43a2e-f504-45c4-9b54-2637d59f8190

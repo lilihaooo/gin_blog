@@ -1,5 +1,6 @@
 package config
 
+// todo 有没有用的
 type Logger struct {
 	Level        string `yaml:"level"`
 	Prefix       string `yaml:"prefix"`
