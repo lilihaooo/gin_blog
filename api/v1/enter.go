@@ -1,6 +1,8 @@
-package api
+package v1
 
-import "blog_gin/api/settings_api"
+import (
+	"blog_gin/api/v1/settings_api"
+)
 
 type ApiGroup struct {
 	SettingsApi settings_api.SettingsApi
