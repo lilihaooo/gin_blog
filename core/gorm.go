@@ -11,7 +11,9 @@ import (
 	"time"
 )
 
-func InitGorm() *os.File {
+var gormLogFile *os.File
+
+func InitGorm() {
 	level := strings.ToLower(global.Config.Mysql.LogLevel)
 	LogLevel := logger.Info
 	switch level {
@@ -22,7 +24,7 @@ func InitGorm() *os.File {
 	}
 
 	// 打开一个文件，用于记录慢查询日志
-	gormLogFile, err := os.OpenFile("log/gorm_slow_queries.log", os.O_CREATE|os.O_APPEND|os.O_WRONLY, 0666)
+	gormLogFile, err := os.OpenFile("log/gorm.log", os.O_CREATE|os.O_APPEND|os.O_WRONLY, 0666)
 	if err != nil {
 		global.Logrus.Fatal(err)
 	}
@@ -72,5 +74,11 @@ func InitGorm() *os.File {
 	// SetConnMaxLifetime 设置了连接可复用的最大时间。
 	sqlDB.SetConnMaxLifetime(time.Hour)
 	global.DB = db
-	return gormLogFile
+}
+
+func CloseGormLogFile() {
+	// 在适当的时候调用此函数，手动关闭日志文件
+	if gormLogFile != nil {
+		logFile.Close()
+	}
 }

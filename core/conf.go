@@ -5,15 +5,17 @@ import (
 	"blog_gin/global"
 	"fmt"
 	"gopkg.in/yaml.v3"
+	"io/ioutil"
 	"log"
 	"os"
 )
 
+var file = "settings.yaml"
+
 // InitConf 读取yaml文件的配置
 func InitConf() {
 	// 读取配置文件
-	configFile := "settings.yaml"
-	file, err := os.Open(configFile)
+	file, err := os.Open(file)
 	if err != nil {
 		panic(fmt.Errorf("无法打开配置文件: %s", err))
 
@@ -26,4 +28,18 @@ func InitConf() {
 		log.Fatalf("解析配置文件失败: %v", err)
 	}
 	global.Config = &c
+}
+
+// 写入yaml文件按
+func SetYaml() bool {
+	// 将结构体保存回YAML文件
+	newData, err := yaml.Marshal(global.Config)
+	if err != nil {
+		global.Logrus.Error("数据序列化失败", err)
+		return false
+	}
+	if err = ioutil.WriteFile(file, newData, 0644); err != nil {
+		return false
+	}
+	return true
 }

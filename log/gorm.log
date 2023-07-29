@@ -1,0 +1,3 @@
+
+2023/07/29 10:14:51 /home/lh/go/src/blog-gin/core/gorm.go:59
+[error] failed to initialize database, got error dial tcp 127.0.0.1:3306: connect: connection refused
