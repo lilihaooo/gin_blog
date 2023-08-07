@@ -8,22 +8,22 @@ import (
 
 func SettingsRouter(appGroup *gin.RouterGroup) {
 	// v1SettingsApi 接口
-	v1settingsGroup := appGroup.Group("v1/settings")
+	v1SettingsGroup := appGroup.Group("v1/settings")
 	v1SettingsApi := v1.ApiGroupApp.SettingsApi
 	// 分组使用接口
-	v1settingsGroup.GET("site_info", v1SettingsApi.GetSiteInfo)
-	v1settingsGroup.PUT("site_info", v1SettingsApi.UpdateSiteInfo)
+	v1SettingsGroup.GET("site_info", v1SettingsApi.GetSiteInfo)
+	v1SettingsGroup.PUT("site_info", v1SettingsApi.UpdateSiteInfo)
 
-	v1settingsGroup.GET("email", v1SettingsApi.GetEmail)
-	v1settingsGroup.PUT("email", v1SettingsApi.UpdateEmail)
-	v1settingsGroup.GET("jwt", v1SettingsApi.GetJwt)
-	v1settingsGroup.PUT("jwt", v1SettingsApi.UpdateJwt)
+	v1SettingsGroup.GET("email", v1SettingsApi.GetEmail)
+	v1SettingsGroup.PUT("email", v1SettingsApi.UpdateEmail)
+	v1SettingsGroup.GET("jwt", v1SettingsApi.GetJwt)
+	v1SettingsGroup.PUT("jwt", v1SettingsApi.UpdateJwt)
 
-	v1settingsGroup.GET("qiniu", v1SettingsApi.GetQiniu)
-	v1settingsGroup.PUT("qiniu", v1SettingsApi.UpdateQiniu)
+	v1SettingsGroup.GET("qiniu", v1SettingsApi.GetQiNiu)
+	v1SettingsGroup.PUT("qiniu", v1SettingsApi.UpdateQiNiu)
 
-	v1settingsGroup.GET("qq", v1SettingsApi.GetQQ)
-	v1settingsGroup.PUT("qq", v1SettingsApi.UpdateQQ)
+	v1SettingsGroup.GET("qq", v1SettingsApi.GetQQ)
+	v1SettingsGroup.PUT("qq", v1SettingsApi.UpdateQQ)
 
 	// v2版本接口
 	v2settingsGroup := appGroup.Group("v2/settings")

@@ -10,5 +10,5 @@ var (
 	Config *config.Config
 	DB     *gorm.DB
 	Logrus *logrus.Logger
-	ErrMap *config.ErrMap
+	ResMap *config.ResMap
 )

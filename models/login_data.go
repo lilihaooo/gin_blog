@@ -2,12 +2,11 @@ package models
 
 import (
 	"blog_gin/models/ctype"
-	"gorm.io/gorm"
 )
 
 // LoginDataModel 统计用户登录数据 id, 用户id, 用户昵称，用户token，登录设备，登录时间
 type LoginDataModel struct {
-	gorm.Model
+	Model
 	UserID    uint             `json:"user_id"`
 	UserModel UserModel        `gorm:"foreignKey:UserID" json:"-"`
 	IP        string           `gorm:"size:20;comment:登录的ip" json:"ip"` // 登录的ip

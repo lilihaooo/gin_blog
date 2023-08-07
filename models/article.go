@@ -2,13 +2,12 @@ package models
 
 import (
 	"blog_gin/models/ctype"
-	"gorm.io/gorm"
 )
 
 type ArticleModel struct {
-	gorm.Model
+	Model
 	Title    string `gorm:"comment:文章标题" json:"title" structs:"title"`       // 文章标题
-	Keyword  string `gorm:"comment:关键字" json:"keyword" structs:"keyword"`    // 关键字
+	Keyword  string `gorm:"comment:关键字" json:"keyword" structs:"keyword"`     // 关键字
 	Abstract string `gorm:"comment:文章简介" json:"abstract" structs:"abstract"` // 文章简介
 	Content  string `gorm:"comment:文章内容" json:"content" structs:"content"`   // 文章内容
 
@@ -17,7 +16,7 @@ type ArticleModel struct {
 	DiggCount     int `gorm:"comment:点赞量" json:"digg_count" structs:"digg_count"`         // 点赞量
 	CollectsCount int `gorm:"comment:收藏量" json:"collects_count" structs:"collects_count"` // 收藏量
 
-	UserID       uint   `gorm:"comment:用户id" json:"user_id" structs:"user_id"`               // 用户id
+	UserID       uint   `gorm:"comment:用户id" json:"user_id" structs:"user_id"`                 // 用户id
 	UserNickName string `gorm:"comment:用户昵称" json:"user_nick_name" structs:"user_nick_name"` //用户昵称
 	UserAvatar   string `gorm:"comment:用户头像" json:"user_avatar" structs:"user_avatar"`       // 用户头像
 

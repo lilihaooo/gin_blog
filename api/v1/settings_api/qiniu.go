@@ -4,27 +4,26 @@ import (
 	"blog_gin/config"
 	"blog_gin/core"
 	"blog_gin/global"
-	"blog_gin/pkg/constant/res_const"
 	"blog_gin/pkg/res"
 	"github.com/gin-gonic/gin"
 )
 
-func (SettingsApi) GetQiniu(c *gin.Context) {
-	qiniu := global.Config.Qiniu
+func (SettingsApi) GetQiNiu(c *gin.Context) {
+	qiniu := global.Config.QiNiu
 	res.OkWithData(c, qiniu)
 }
 
-func (SettingsApi) UpdateQiniu(c *gin.Context) {
-	var cr config.Qiniu
+func (SettingsApi) UpdateQiNiu(c *gin.Context) {
+	var cr config.QiNiu
 	err := c.ShouldBindJSON(&cr)
 	if err != nil {
-		res.Fail(c, res_const.INVALID_PARAMS, "")
+		res.Fail(c, res.INVALID_PARAMS, "")
 		return
 	}
 	// 只将这一部分修改
-	global.Config.Qiniu = cr
+	global.Config.QiNiu = cr
 	if !core.SetYaml() {
-		res.Fail(c, res_const.FAIL_OPER, "")
+		res.Fail(c, res.FAIL_OPER, "")
 		return
 	}
 	res.Ok(c)

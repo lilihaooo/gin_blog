@@ -1,10 +1,8 @@
 package models
 
-import "gorm.io/gorm"
-
 // TagModel 标签表
 type TagModel struct {
-	gorm.Model
+	Model
 	Title string `gorm:"size:16" json:"title"` // 标签的名称
 }
 

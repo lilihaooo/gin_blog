@@ -7,10 +7,11 @@ type Config struct {
 	Server   `yaml:"server"`
 	SiteInfo `yaml:"site_info"`
 	QQ       `yaml:"qq"`
-	Qiniu    `yaml:"qiniu"`
+	QiNiu    `yaml:"qi_niu"`
 	Email    `yaml:"email"`
 	Jwt      `yaml:"jwt"`
+	Upload   `yaml:"upload"`
 }
 
-// ErrMap 错误映射
-type ErrMap map[int]string
+// ResMap 错误映射
+type ResMap map[int]string

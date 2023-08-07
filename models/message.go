@@ -1,10 +1,8 @@
 package models
 
-import "gorm.io/gorm"
-
 // MessageModel 记录消息
 type MessageModel struct {
-	gorm.Model
+	Model
 	SendUserID       uint      `gorm:"primaryKey" json:"send_user_id"` // 发送人id
 	SendUserModel    UserModel `gorm:"foreignKey:SendUserID" json:"-"`
 	SendUserNickName string    `gorm:"size:42" json:"send_user_nick_name"`

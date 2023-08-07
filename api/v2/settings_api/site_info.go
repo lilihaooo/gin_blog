@@ -4,7 +4,6 @@ import (
 	"blog_gin/config"
 	"blog_gin/core"
 	"blog_gin/global"
-	"blog_gin/pkg/constant/res_const"
 	"blog_gin/pkg/res"
 	"github.com/gin-gonic/gin"
 )
@@ -17,7 +16,7 @@ func (SettingsApi) GetSittingsInfo(c *gin.Context) {
 	var cr SettingsUri
 	err := c.ShouldBindUri(&cr)
 	if err != nil {
-		res.Fail(c, res_const.INVALID_PARAMS, "")
+		res.Fail(c, res.INVALID_PARAMS, "")
 		return
 	}
 	switch cr.Name {
@@ -28,11 +27,11 @@ func (SettingsApi) GetSittingsInfo(c *gin.Context) {
 	case "qq":
 		res.OkWithData(c, global.Config.QQ)
 	case "qiniu":
-		res.OkWithData(c, global.Config.Qiniu)
+		res.OkWithData(c, global.Config.QiNiu)
 	case "jwt":
 		res.OkWithData(c, global.Config.Jwt)
 	default:
-		res.Fail(c, res_const.INVALID_PARAMS, "参数错误啦")
+		res.Fail(c, res.INVALID_PARAMS, "参数错误啦")
 	}
 }
 
@@ -40,7 +39,7 @@ func (SettingsApi) UpdateSittingsInfo(c *gin.Context) {
 	var cr SettingsUri
 	err := c.ShouldBindUri(&cr)
 	if err != nil {
-		res.Fail(c, res_const.INVALID_PARAMS, "")
+		res.Fail(c, res.INVALID_PARAMS, "")
 		return
 	}
 
@@ -49,7 +48,7 @@ func (SettingsApi) UpdateSittingsInfo(c *gin.Context) {
 		var data config.SiteInfo
 		err = c.ShouldBindJSON(&data)
 		if err != nil {
-			res.Fail(c, res_const.INVALID_PARAMS, "")
+			res.Fail(c, res.INVALID_PARAMS, "")
 			return
 		}
 		global.Config.SiteInfo = data
@@ -57,7 +56,7 @@ func (SettingsApi) UpdateSittingsInfo(c *gin.Context) {
 		var data config.Email
 		err = c.ShouldBindJSON(&data)
 		if err != nil {
-			res.Fail(c, res_const.INVALID_PARAMS, "")
+			res.Fail(c, res.INVALID_PARAMS, "")
 			return
 		}
 		global.Config.Email = data
@@ -65,33 +64,33 @@ func (SettingsApi) UpdateSittingsInfo(c *gin.Context) {
 		var data config.QQ
 		err = c.ShouldBindJSON(&data)
 		if err != nil {
-			res.Fail(c, res_const.INVALID_PARAMS, "")
+			res.Fail(c, res.INVALID_PARAMS, "")
 			return
 		}
 		global.Config.QQ = data
 	case "qiniu":
-		var data config.Qiniu
+		var data config.QiNiu
 		err = c.ShouldBindJSON(&data)
 		if err != nil {
-			res.Fail(c, res_const.INVALID_PARAMS, "")
+			res.Fail(c, res.INVALID_PARAMS, "")
 			return
 		}
-		global.Config.Qiniu = data
+		global.Config.QiNiu = data
 	case "jwt":
 		var data config.Jwt
 		err = c.ShouldBindJSON(&data)
 		if err != nil {
-			res.Fail(c, res_const.INVALID_PARAMS, "")
+			res.Fail(c, res.INVALID_PARAMS, "")
 			return
 		}
 		global.Config.Jwt = data
 	default:
-		res.Fail(c, res_const.INVALID_PARAMS, "参数错误啦")
+		res.Fail(c, res.INVALID_PARAMS, "参数错误啦")
 		return
 	}
 
 	if !core.SetYaml() {
-		res.Fail(c, res_const.FAIL_OPER, "")
+		res.Fail(c, res.FAIL_OPER, "")
 		return
 	}
 	res.Ok(c)

@@ -1,3 +1,102 @@
 
 2023/07/29 10:14:51 /home/lh/go/src/blog-gin/core/gorm.go:59
 [error] failed to initialize database, got error dial tcp 127.0.0.1:3306: connect: connection refused
+
+2023/07/31 23:05:06 /home/lh/go/src/blog-gin/api/v1/images_api/image_upload.go:85 Error 1054 (42S22): Unknown column 'hash' in 'where clause'
+[9.089ms] [rows:0] SELECT * FROM `menu_banner` WHERE hash = '7200c0e17d452f12676b47d833aa1e67' LIMIT 1
+
+2023/07/31 23:05:06 /home/lh/go/src/blog-gin/api/v1/images_api/image_upload.go:85 Error 1054 (42S22): Unknown column 'hash' in 'where clause'
+[1.291ms] [rows:0] SELECT * FROM `menu_banner` WHERE hash = '976fe543f9076b370b7731c82eabddd2' LIMIT 1
+
+2023/07/31 23:05:06 /home/lh/go/src/blog-gin/api/v1/images_api/image_upload.go:85 Error 1054 (42S22): Unknown column 'hash' in 'where clause'
+[1.331ms] [rows:0] SELECT * FROM `menu_banner` WHERE hash = '4d4d021ce263ca9d608decc744317934' LIMIT 1
+
+2023/07/31 23:05:27 /home/lh/go/src/blog-gin/api/v1/images_api/image_upload.go:85 Error 1054 (42S22): Unknown column 'hash' in 'where clause'
+[1.028ms] [rows:0] SELECT * FROM `menu_banner` WHERE hash = '7200c0e17d452f12676b47d833aa1e67' LIMIT 1
+
+2023/07/31 23:05:27 /home/lh/go/src/blog-gin/api/v1/images_api/image_upload.go:85 Error 1054 (42S22): Unknown column 'hash' in 'where clause'
+[0.882ms] [rows:0] SELECT * FROM `menu_banner` WHERE hash = '976fe543f9076b370b7731c82eabddd2' LIMIT 1
+
+2023/07/31 23:05:27 /home/lh/go/src/blog-gin/api/v1/images_api/image_upload.go:85 Error 1054 (42S22): Unknown column 'hash' in 'where clause'
+[1.012ms] [rows:0] SELECT * FROM `menu_banner` WHERE hash = '4d4d021ce263ca9d608decc744317934' LIMIT 1
+
+2023/07/31 23:08:25 /home/lh/go/src/blog-gin/api/v1/images_api/image_upload.go:85 Error 1054 (42S22): Unknown column 'hash' in 'where clause'
+[5.468ms] [rows:0] SELECT * FROM `menu_banner` WHERE hash = '7200c0e17d452f12676b47d833aa1e67' LIMIT 1
+
+2023/07/31 23:08:25 /home/lh/go/src/blog-gin/api/v1/images_api/image_upload.go:85 Error 1054 (42S22): Unknown column 'hash' in 'where clause'
+[1.279ms] [rows:0] SELECT * FROM `menu_banner` WHERE hash = '976fe543f9076b370b7731c82eabddd2' LIMIT 1
+
+2023/07/31 23:08:25 /home/lh/go/src/blog-gin/api/v1/images_api/image_upload.go:85 Error 1054 (42S22): Unknown column 'hash' in 'where clause'
+[1.452ms] [rows:0] SELECT * FROM `menu_banner` WHERE hash = '4d4d021ce263ca9d608decc744317934' LIMIT 1
+
+2023/07/31 23:12:58 /home/lh/go/src/blog-gin/api/v1/images_api/image_upload.go:85 Error 1054 (42S22): Unknown column 'hash' in 'where clause'
+[5.093ms] [rows:0] SELECT * FROM `menu_banner` WHERE hash = '7200c0e17d452f12676b47d833aa1e67' LIMIT 1
+
+2023/07/31 23:12:58 /home/lh/go/src/blog-gin/api/v1/images_api/image_upload.go:85 Error 1054 (42S22): Unknown column 'hash' in 'where clause'
+[1.106ms] [rows:0] SELECT * FROM `menu_banner` WHERE hash = '976fe543f9076b370b7731c82eabddd2' LIMIT 1
+
+2023/07/31 23:12:58 /home/lh/go/src/blog-gin/api/v1/images_api/image_upload.go:85 Error 1054 (42S22): Unknown column 'hash' in 'where clause'
+[1.003ms] [rows:0] SELECT * FROM `menu_banner` WHERE hash = '4d4d021ce263ca9d608decc744317934' LIMIT 1
+
+2023/07/31 23:13:01 /home/lh/go/src/blog-gin/api/v1/images_api/image_upload.go:85 Error 1054 (42S22): Unknown column 'hash' in 'where clause'
+[1.737ms] [rows:0] SELECT * FROM `menu_banner` WHERE hash = '7200c0e17d452f12676b47d833aa1e67' LIMIT 1
+
+2023/07/31 23:13:01 /home/lh/go/src/blog-gin/api/v1/images_api/image_upload.go:85 Error 1054 (42S22): Unknown column 'hash' in 'where clause'
+[0.998ms] [rows:0] SELECT * FROM `menu_banner` WHERE hash = '976fe543f9076b370b7731c82eabddd2' LIMIT 1
+
+2023/07/31 23:13:01 /home/lh/go/src/blog-gin/api/v1/images_api/image_upload.go:85 Error 1054 (42S22): Unknown column 'hash' in 'where clause'
+[1.143ms] [rows:0] SELECT * FROM `menu_banner` WHERE hash = '4d4d021ce263ca9d608decc744317934' LIMIT 1
+
+2023/08/02 00:00:54 /home/lh/go/src/blog-gin/api/v1/images_api/image.go:24 SLOW SQL >= 1ms
+[2.298ms] [rows:1] SELECT count(*) FROM `banner` WHERE `banner`.`deleted_at` IS NULL
+
+2023/08/02 00:00:54 /home/lh/go/src/blog-gin/api/v1/images_api/image.go:25 SLOW SQL >= 1ms
+[1.157ms] [rows:4] SELECT * FROM `banner` WHERE `banner`.`deleted_at` IS NULL LIMIT 4
+
+2023/08/02 00:01:01 /home/lh/go/src/blog-gin/api/v1/images_api/image.go:24
+[0.715ms] [rows:1] SELECT count(*) FROM `banner` WHERE `banner`.`deleted_at` IS NULL
+
+2023/08/02 00:01:01 /home/lh/go/src/blog-gin/api/v1/images_api/image.go:25
+[0.594ms] [rows:4] SELECT * FROM `banner` WHERE `banner`.`deleted_at` IS NULL LIMIT 4
+
+2023/08/02 00:01:17 /home/lh/go/src/blog-gin/api/v1/images_api/image.go:24 SLOW SQL >= 1ms
+[1.231ms] [rows:1] SELECT count(*) FROM `banner` WHERE `banner`.`deleted_at` IS NULL
+
+2023/08/02 00:01:17 /home/lh/go/src/blog-gin/api/v1/images_api/image.go:25
+[0.974ms] [rows:4] SELECT * FROM `banner` WHERE `banner`.`deleted_at` IS NULL LIMIT 4
+
+2023/08/02 00:01:22 /home/lh/go/src/blog-gin/api/v1/images_api/image.go:24
+[0.973ms] [rows:1] SELECT count(*) FROM `banner` WHERE `banner`.`deleted_at` IS NULL
+
+2023/08/02 00:01:22 /home/lh/go/src/blog-gin/api/v1/images_api/image.go:25 SLOW SQL >= 1ms
+[1.002ms] [rows:4] SELECT * FROM `banner` WHERE `banner`.`deleted_at` IS NULL LIMIT 4
+
+2023/08/02 00:04:36 /home/lh/go/src/blog-gin/api/v1/images_api/image.go:24 SLOW SQL >= 1ms
+[1.822ms] [rows:1] SELECT count(*) FROM `banner` WHERE `banner`.`deleted_at` IS NULL
+
+2023/08/02 00:04:36 /home/lh/go/src/blog-gin/api/v1/images_api/image.go:25
+[0.774ms] [rows:4] SELECT * FROM `banner` WHERE `banner`.`deleted_at` IS NULL LIMIT 4
+
+2023/08/02 00:04:38 /home/lh/go/src/blog-gin/api/v1/images_api/image.go:24
+[0.917ms] [rows:1] SELECT count(*) FROM `banner` WHERE `banner`.`deleted_at` IS NULL
+
+2023/08/02 00:04:38 /home/lh/go/src/blog-gin/api/v1/images_api/image.go:25
+[0.749ms] [rows:4] SELECT * FROM `banner` WHERE `banner`.`deleted_at` IS NULL LIMIT 4
+
+2023/08/02 00:04:39 /home/lh/go/src/blog-gin/api/v1/images_api/image.go:24
+[0.768ms] [rows:1] SELECT count(*) FROM `banner` WHERE `banner`.`deleted_at` IS NULL
+
+2023/08/02 00:04:39 /home/lh/go/src/blog-gin/api/v1/images_api/image.go:25
+[0.731ms] [rows:4] SELECT * FROM `banner` WHERE `banner`.`deleted_at` IS NULL LIMIT 4
+
+2023/08/02 00:04:40 /home/lh/go/src/blog-gin/api/v1/images_api/image.go:24
+[0.766ms] [rows:1] SELECT count(*) FROM `banner` WHERE `banner`.`deleted_at` IS NULL
+
+2023/08/02 00:04:40 /home/lh/go/src/blog-gin/api/v1/images_api/image.go:25
+[0.638ms] [rows:4] SELECT * FROM `banner` WHERE `banner`.`deleted_at` IS NULL LIMIT 4
+
+2023/08/02 00:04:40 /home/lh/go/src/blog-gin/api/v1/images_api/image.go:24
+[0.981ms] [rows:1] SELECT count(*) FROM `banner` WHERE `banner`.`deleted_at` IS NULL
+
+2023/08/02 00:04:40 /home/lh/go/src/blog-gin/api/v1/images_api/image.go:25
+[0.833ms] [rows:4] SELECT * FROM `banner` WHERE `banner`.`deleted_at` IS NULL LIMIT 4

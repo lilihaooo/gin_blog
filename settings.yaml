@@ -4,7 +4,7 @@ mysql:
     username: root
     password: a111111
     db: gin_blog
-    log_level: error
+    log_level: info
 logger:
     show_pass_line: true
 server:
@@ -20,12 +20,13 @@ qq:
     app_id: "666"
     key: dadd
     redirect: aaa
-qiniu:
-    access_key: your_qiniu_access_key
-    secret_key: your_qiniu_secret_key
-    bucket: your_bucket_name
-    cdn: xxxx
-    zone: xxxx
+qi_niu:
+    enable: true  # 是否启用
+    access_key: PkIfo3U5fGsC5tgiT2RHWEsVwU-bz6-vApT1rUkH
+    secret_key: Dj3o1YUJSboe3N6oefpOyqyOyzryi6PV4A9cZIOz
+    bucket: blog-gin-lihao
+    cdn: ryz8iwkc6.hn-bkt.clouddn.com
+    zone: z2
     size: 1
 email:
     host: "333"
@@ -39,3 +40,10 @@ jwt:
     secret: your_secret_key
     expires: 3600
     issuer: your_app_name
+upload:
+    size: 1
+    path: uploads/file
+    white_list:
+        - .jpg
+        - .jpeg
+        - .png

@@ -1,10 +1,11 @@
-package res_const
+package res
 
 const (
-	SUCCESS        = 200
-	ERROR          = 500
-	INVALID_PARAMS = 400
-	FAIL_OPER      = 800
+	SUCCESS        = 2000
+	ERROR          = 5000
+	INVALID_PARAMS = 4000
+	FAIL_VALIDATE  = 4100
+	FAIL_OPER      = 8000
 
 	//用户相关
 	ERROR_EXIST_USER     = 10001

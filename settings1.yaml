@@ -73,6 +73,10 @@ qiniu:
   zone: xxxx
   size: 1
 
+upload:
+  size: 2
+  path: uploads/file
+
 qq:
   app_id: your_qq_client_id
   key: your_qq_client_secret
