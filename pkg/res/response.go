@@ -36,9 +36,9 @@ func Fail(c *gin.Context, code int, msg string) {
 }
 
 func FailValidate(c *gin.Context, data []ValidateResponse) {
-	message := (*global.ResMap)[INVALID_PARAMS]
+	message := (*global.ResMap)[FAIL_VALIDATE]
 	c.JSON(http.StatusOK, response{
-		Code: INVALID_PARAMS,
+		Code: FAIL_VALIDATE,
 		Msg:  message,
 		Data: data,
 	})

@@ -39,7 +39,7 @@ func getCfg(q config.QiNiu) storage.Config {
 
 }
 
-// UploadImage 上传图片  文件数组，前缀
+// UploadImage 上传图片  文件数组, 文件名, 七牛云空间根下的目录
 func UploadImage(data []byte, imageName string, prefix string) (filePath string, err error) {
 	if !global.Config.QiNiu.Enable {
 		return "", errors.New("请启用七牛云上传")

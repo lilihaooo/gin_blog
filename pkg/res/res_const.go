@@ -5,6 +5,7 @@ const (
 	ERROR          = 5000
 	INVALID_PARAMS = 4000
 	FAIL_VALIDATE  = 4100
+	FAIL_AUTH      = 4200
 	FAIL_OPER      = 8000
 
 	//用户相关

@@ -2,13 +2,15 @@ package global
 
 import (
 	"blog_gin/config"
+	"github.com/go-redis/redis/v8"
 	"github.com/sirupsen/logrus"
 	"gorm.io/gorm"
 )
 
 var (
-	Config *config.Config
-	DB     *gorm.DB
-	Logrus *logrus.Logger
-	ResMap *config.ResMap
+	Config      *config.Config
+	DB          *gorm.DB
+	Logrus      *logrus.Logger
+	ResMap      *config.ResMap
+	RedisClient *redis.Client
 )

@@ -18,7 +18,6 @@ func InitConf() {
 	file, err := os.Open(file)
 	if err != nil {
 		panic(fmt.Errorf("无法打开配置文件: %s", err))
-
 	}
 	defer file.Close()
 	// 解析配置文件
@@ -30,7 +29,7 @@ func InitConf() {
 	global.Config = &c
 }
 
-// 写入yaml文件按
+// 写入yaml文件
 func SetYaml() bool {
 	// 将结构体保存回YAML文件
 	newData, err := yaml.Marshal(global.Config)

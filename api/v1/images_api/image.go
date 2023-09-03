@@ -12,7 +12,7 @@ import (
 )
 
 func (ImagesApi) ImagesList(c *gin.Context) {
-	var pageReq req.PaginationReq
+	pageReq := req.NewPaginationReq()
 	err := c.ShouldBindQuery(&pageReq)
 	if err != nil {
 		res.Fail(c, res.INVALID_PARAMS, "")
@@ -22,7 +22,8 @@ func (ImagesApi) ImagesList(c *gin.Context) {
 	db := global.DB.Order(sort)
 	list, count, err := common.MakeList(models.BannerModel{}, db, pageReq)
 	if err != nil {
-		res.Fail(c, res.FAIL_OPER, err.Error())
+		global.Logrus.Error(err)
+		res.Fail(c, res.FAIL_OPER, "查询失败")
 		return
 	}
 	res.OkWithList(c, list, count)
@@ -35,10 +36,16 @@ func (ImagesApi) ImagesDelete(c *gin.Context) {
 		res.Fail(c, res.INVALID_PARAMS, "")
 		return
 	}
+
+	if len(cr.IDs) == 0 {
+		res.Fail(c, res.INVALID_PARAMS, "请选择图片")
+		return
+	}
+
 	var bannerList []models.BannerModel
 	count := global.DB.Find(&bannerList, cr.IDs).RowsAffected
 	if count == 0 {
-		res.Fail(c, res.INVALID_PARAMS, "请选择图片")
+		res.Fail(c, res.INVALID_PARAMS, "图片不存在")
 		return
 	}
 	err = global.DB.Delete(bannerList).Error

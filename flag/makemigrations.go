@@ -24,6 +24,8 @@ func Makemigrations() {
 			&models.MenuBannerModel{},
 			&models.FadeBackModel{},
 			&models.LoginDataModel{},
+			&models.RoomModel{},
+			&models.UserRoomModel{},
 		)
 	if err != nil {
 		global.Logrus.Errorf("生成数据库表结构失败:%s", err)

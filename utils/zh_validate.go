@@ -6,8 +6,8 @@ import (
 	ut "github.com/go-playground/universal-translator"
 	"github.com/go-playground/validator/v10"
 	zhTranslations "github.com/go-playground/validator/v10/translations/zh"
+	"github.com/iancoleman/strcase"
 	"reflect"
-	"strings"
 )
 
 func ZhValidate(cr any) (validateResponse []res.ValidateResponse) {
@@ -27,7 +27,9 @@ func ZhValidate(cr any) (validateResponse []res.ValidateResponse) {
 	if errs := validate.Struct(cr); errs != nil {
 		if errs != nil {
 			for _, e := range errs.(validator.ValidationErrors) {
-				validateResponse = append(validateResponse, res.ValidateResponse{Field: strings.ToLower(e.StructField()), Msg: e.Translate(trans)})
+				strcase.ToSnake(e.StructField())
+				// 	"github.com/iancoleman/strcase" 将字段转为蛇形
+				validateResponse = append(validateResponse, res.ValidateResponse{Field: strcase.ToSnake(e.StructField()), Msg: e.Translate(trans)})
 			}
 		}
 	}

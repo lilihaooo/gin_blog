@@ -61,8 +61,8 @@ func InitLogrus() {
 	global.Logrus = log
 }
 
+// CloseLogFile 在适当的时候调用此函数，手动关闭日志文件
 func CloseLogFile() {
-	// 在适当的时候调用此函数，手动关闭日志文件
 	if logFile != nil {
 		logFile.Close()
 	}

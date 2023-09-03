@@ -21,24 +21,22 @@ qq:
     key: dadd
     redirect: aaa
 qi_niu:
-    enable: true  # 是否启用
+    enable: false  # 是否启用
     access_key: PkIfo3U5fGsC5tgiT2RHWEsVwU-bz6-vApT1rUkH
     secret_key: Dj3o1YUJSboe3N6oefpOyqyOyzryi6PV4A9cZIOz
     bucket: blog-gin-lihao
-    cdn: ryz8iwkc6.hn-bkt.clouddn.com
+    cdn: www.lihao_blog.com
     zone: z2
     size: 1
+    prefix: gin_blog
 email:
-    host: "333"
-    port: 0
-    user: lihao
-    password: "21121"
-    default_from_email: xxx
-    use_ssl: true
-    user_tls: 嘻嘻嘻
+    host: smtp.qq.com
+    port: 587
+    from: 1039007652@qq.com
+    password: xegrxgvkminlbcbh
 jwt:
     secret: your_secret_key
-    expires: 3600
+    expires: 6000
     issuer: your_app_name
 upload:
     size: 1

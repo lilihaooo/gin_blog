@@ -18,6 +18,8 @@ func main() {
 	defer core.CloseGormLogFile()
 	// 初始化错误码json文件
 	core.InitResMap()
+	// 初始化redis
+	core.InitRedis()
 
 	option := flag.Parse()
 	flag.SwitchOption(option)
