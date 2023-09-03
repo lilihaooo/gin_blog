@@ -21,7 +21,7 @@ func main4() {
 	//// 初始化redis
 	core.InitRedis()
 
-	if err := u_email.SendEmail(string(u_email.Code), u_random.GenRandomCode(4), "1039007652@qq.com"); err != nil {
+	if err := u_email.SendEmail("验证码", u_random.GenRandomCode(4), "1039007652@qq.com"); err != nil {
 		fmt.Println(err)
 	}
 	fmt.Println("发送成功")

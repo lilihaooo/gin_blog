@@ -8,12 +8,6 @@ import (
 	"github.com/jordan-wright/email"
 )
 
-type Subject string
-
-const (
-	Code Subject = "验证码"
-)
-
 func SendEmail(subject, message, toEmail string) error {
 	// 创建一个新的邮件对象
 	e := email.NewEmail()

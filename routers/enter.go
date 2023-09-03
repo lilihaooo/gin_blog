@@ -13,8 +13,10 @@ func InitRouter() *gin.Engine {
 	r.POST("/login", v1.ApiGroupApp.UserApi.Login)
 	// 需要登陆
 	r.Use(jwt.JwtAuth())
+	// 创建ws全局的连接
+	//r.GET("ws_conn", service.AppService.WebsocketService.WebsocketConn)
 	// 聊天服务
-	r.GET("massage", service.AppService.WebsocketService.WebsocketChat)
+	r.GET("ws_chat", service.AppService.WebsocketService.WebsocketChat)
 
 	apiGroup := r.Group("api")
 	// 配置静态文件根目录  // todo 该代码能否去掉?

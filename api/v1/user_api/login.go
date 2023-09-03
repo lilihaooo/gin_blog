@@ -53,7 +53,6 @@ func (UserApi) Login(c *gin.Context) {
 	key := fmt.Sprintf("jwt_token:%d:%s", user.ID, token)
 	// 将jwt保存到redis中
 	global.RedisClient.Set(context.Background(), key, "", jwts.GetJwtExpiresDuration())
-
 	response := map[string]any{
 		"token": token,
 	}

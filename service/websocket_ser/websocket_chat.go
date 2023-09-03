@@ -3,33 +3,44 @@ package websocket_ser
 import (
 	"blog_gin/global"
 	"blog_gin/models"
-	"blog_gin/pkg/res"
 	"blog_gin/utils/jwts"
 	"github.com/gin-gonic/gin"
 	"github.com/gorilla/websocket"
 	"strconv"
+	"time"
 )
 
-var ws = make(map[uint]*websocket.Conn)
+type message struct {
+	Data   string `json:"data"`
+	RoomID uint   `json:"room_id"`
+}
+
+var wsChatMap = make(map[uint]*websocket.Conn)
 
 func (WebsocketService) WebsocketChat(c *gin.Context) {
-	conn, err := upgrader.Upgrade(c.Writer, c.Request, nil)
+	// 将http升级为websocket
+	conn, err := upGrader.Upgrade(c.Writer, c.Request, nil)
 	if err != nil {
-		res.Fail(c, 32323, err.Error())
 		global.Logrus.Error("Upgrade Websocket服务失败:", err)
 		return
 	}
-	defer conn.Close()
-	// 获取用户Id
-	user, _ := c.Get("user")
+	user := c.MustGet("user")
 	payload := user.(*jwts.Payload)
-	// 将连接加入到map中
-	ws[payload.UserID] = conn
+	wsChatMap[payload.UserID] = conn
+	defer func() {
+		conn.Close()
+		delete(wsChatMap, payload.UserID)
+	}()
+	// 启动心跳检测
+	go handleHeartbeat(conn)
+
 	for {
 		ms := message{}
 		err := conn.ReadJSON(&ms)
 		if err != nil {
-			global.Logrus.Error("读取消息失败:", err)
+			if !websocket.IsCloseError(err, websocket.CloseNormalClosure) {
+				global.Logrus.Error("读取消息失败:", err)
+			}
 			break
 		}
 		// 获取消息之后用户是否属于这个房间
@@ -47,7 +58,6 @@ func (WebsocketService) WebsocketChat(c *gin.Context) {
 			break
 		}
 		// 将消息保存到数据库
-
 		var messageModel models.MessageModel
 		err = messageModel.AddOneMessage(&models.MessageModel{
 			UserID: payload.UserID,
@@ -62,8 +72,8 @@ func (WebsocketService) WebsocketChat(c *gin.Context) {
 		byteSlice := []byte(str)
 		// 发消息给相应的连接
 		for _, re := range records {
-			// 获取map中的值, 返回两次参数 值, 是否存在(bool)
-			if conn, exists := ws[re.UserID]; exists {
+			// 获取map中的值, 返回两次参数值, 是否存在(bool)
+			if conn, exists := wsChatMap[re.UserID]; exists {
 				err = conn.WriteMessage(websocket.TextMessage, byteSlice) // 文本类型
 				if err != nil {
 					global.Logrus.Error("Write消息失败:", err)
@@ -71,6 +81,19 @@ func (WebsocketService) WebsocketChat(c *gin.Context) {
 				}
 			}
 		}
+	}
+}
 
+func handleHeartbeat(conn *websocket.Conn) {
+	ticker := time.NewTicker(10 * time.Second) // 每10秒发送一次心跳消息
+	defer ticker.Stop()
+
+	for {
+		select {
+		case <-ticker.C:
+			if err := conn.WriteMessage(websocket.TextMessage, []byte("heartbeat")); err != nil {
+				return
+			}
+		}
 	}
 }
