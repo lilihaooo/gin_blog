@@ -5,7 +5,7 @@ import (
 	"blog_gin/models"
 	"blog_gin/pkg/req"
 	"blog_gin/pkg/res"
-	"blog_gin/service/common"
+	"blog_gin/service/common/db_ser"
 	"blog_gin/utils"
 	"fmt"
 	"github.com/gin-gonic/gin"
@@ -20,7 +20,7 @@ func (ImagesApi) ImagesList(c *gin.Context) {
 	}
 	sort := "id desc"
 	db := global.DB.Order(sort)
-	list, count, err := common.MakeList(models.BannerModel{}, db, pageReq)
+	list, count, err := db_ser.DBMakeList(models.BannerModel{}, db, pageReq)
 	if err != nil {
 		global.Logrus.Error(err)
 		res.Fail(c, res.FAIL_OPER, "查询失败")

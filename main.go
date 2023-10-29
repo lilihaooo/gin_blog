@@ -20,6 +20,8 @@ func main() {
 	core.InitResMap()
 	// 初始化redis
 	core.InitRedis()
+	// 初始化es
+	core.InitEs()
 
 	option := flag.Parse()
 	flag.SwitchOption(option)

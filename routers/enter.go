@@ -33,6 +33,7 @@ func InitRouter() *gin.Engine {
 	MenuRouter(apiGroup)
 	// 用户管理
 	UserRouter(apiGroup)
-
+	// 文章管理
+	ArticleRouter(apiGroup)
 	return r
 }

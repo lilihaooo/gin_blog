@@ -6,7 +6,7 @@ import (
 	"blog_gin/models/ctype"
 	"blog_gin/pkg/req"
 	"blog_gin/pkg/res"
-	"blog_gin/service/common"
+	"blog_gin/service/common/db_ser"
 	"blog_gin/utils/desensitize"
 	"blog_gin/utils/jwts"
 	"github.com/gin-gonic/gin"
@@ -25,7 +25,7 @@ func (UserApi) UserList(c *gin.Context) {
 	var model models.UserModel
 	sort := "id desc"
 	db := global.DB.Order(sort)
-	list, count, err := common.MakeList(model, db, cr)
+	list, count, err := db_ser.DBMakeList(model, db, cr)
 	if err != nil {
 		global.Logrus.Error(err)
 		res.Fail(c, res.FAIL_OPER, "查询失败")

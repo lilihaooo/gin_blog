@@ -5,7 +5,7 @@ import (
 	"blog_gin/models"
 	"blog_gin/pkg/req"
 	"blog_gin/pkg/res"
-	"blog_gin/service/common"
+	"blog_gin/service/common/db_ser"
 	"github.com/gin-gonic/gin"
 	"strings"
 )
@@ -25,7 +25,7 @@ func (AdvertsApi) AdvertList(c *gin.Context) {
 	model := models.AdvertModel{IsShow: isShow}
 	sort := "id desc"
 	db := global.DB.Order(sort).Where(model)
-	list, count, err := common.MakeList(model, db, cr)
+	list, count, err := db_ser.DBMakeList(model, db, cr)
 	if err != nil {
 		global.Logrus.Error(err)
 		res.Fail(c, res.FAIL_OPER, "查询失败")

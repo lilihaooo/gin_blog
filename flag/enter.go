@@ -8,17 +8,20 @@ import (
 type Option struct {
 	DB   bool
 	User string
+	Es   string
 }
 
 // Parse 解析命令行参数
 func Parse() Option {
 	db := sys_flag.Bool("db", false, "初始化数据库") // false 默认值, 含有-db就为true
 	user := sys_flag.String("u", "", "创建用户")
+	es := sys_flag.String("es", "", "es操作")
 	// 解析命令行参数写入注册的flag里
 	sys_flag.Parse()
 	return Option{
 		DB:   *db,
 		User: *user,
+		Es:   *es,
 	}
 }
 
@@ -50,6 +53,14 @@ func SwitchOption(option Option) {
 	if option.User == "admin" {
 		// 控制台创建admin
 		CreateAdmin()
+		return
+	}
+	if option.Es == "create" {
+		CreateEsIndex()
+		return
+	}
+	if option.Es == "delete" {
+		DeleteEsIndex()
 		return
 	}
 }

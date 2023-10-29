@@ -2,6 +2,7 @@ package v1
 
 import (
 	"blog_gin/api/v1/advert_api"
+	"blog_gin/api/v1/article_api"
 	"blog_gin/api/v1/images_api"
 	"blog_gin/api/v1/menu_api"
 	"blog_gin/api/v1/settings_api"
@@ -14,6 +15,7 @@ type ApiGroup struct {
 	AdvertsApi  advert_api.AdvertsApi
 	MenuApi     menu_api.MenuApi
 	UserApi     user_api.UserApi
+	ArticleApi  article_api.ArticleApi
 }
 
 var ApiGroupApp = new(ApiGroup)

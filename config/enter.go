@@ -11,6 +11,7 @@ type Config struct {
 	Email    `yaml:"email"`
 	Jwt      `yaml:"jwt"`
 	Upload   `yaml:"upload"`
+	Es       `yaml:"es"`
 }
 
 // ResMap 错误映射

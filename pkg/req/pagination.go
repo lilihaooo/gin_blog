@@ -13,5 +13,9 @@ func NewPaginationReq() *PaginationReq {
 }
 
 func GetOffset(p *PaginationReq) int {
-	return (p.Page - 1) * p.PageSize
+	offset := (p.Page - 1) * p.PageSize
+	if offset < 0 {
+		return 0
+	}
+	return offset
 }

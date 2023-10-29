@@ -1,8 +1,8 @@
 package service
 
 import (
+	"blog_gin/service/common/redis_ser"
 	"blog_gin/service/image_ser"
-	"blog_gin/service/redis_ser"
 	"blog_gin/service/websocket_ser"
 )
 
